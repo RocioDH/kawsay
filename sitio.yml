@@ -1,0 +1,116 @@
+nombre: Kawsay
+logo: ""
+whatsapp: "5493510000000"
+mensaje_whatsapp: Hola Kawsay, quiero consultar por una sesión
+instagram: kawsay.bienestar
+
+hero:
+  pronunciacion: cáusai
+  significado: "En quechua: vida, existencia"
+  bajada: Centro Bioenergético. Biomagnetismo y sanación energética para volver a sentir tu energía en equilibrio.
+  presencial: En Córdoba capital, con turno previo.
+  a_distancia: Desde tu casa, estés donde estés.
+
+filosofia:
+  titulo: Nuestra filosofía
+  foto: /img/filosofia.webp
+  texto: >-
+    En la cosmovisión andina, Kawsay es la energía vital que nos anima y que conecta todo lo que existe:
+    las montañas, los ríos, las plantas y cada célula de nuestro cuerpo. Es la raíz del *Sumak Kawsay*,
+    el Buen Vivir: estar en armonía con uno mismo, con los demás y con la naturaleza.
+  frase: Cuando ese flujo se bloquea, aparecen el estrés y el malestar. Nuestro trabajo es ayudarte a que vuelva a circular.
+  texto_final: >-
+    El biomagnetismo trabaja a nivel físico y prepara el terreno. La sanación energética trabaja directamente
+    sobre ese flujo vital, limpiando bloqueos e interferencias para que tu energía recupere su fuerza.
+
+servicios_titulo: Servicios
+servicios_intro: Tres propuestas, de la más puntual a la más profunda. Todas se pueden hacer presencial o a distancia.
+
+servicios:
+  - nombre: Biomagnetismo integral
+    etiqueta: Punto de partida
+    foto: /img/biomagnetismo.webp
+    descripcion: >-
+      Terapia desarrollada por el Dr. Isaac Goiz Durán en 1988. Se basa en identificar puntos del cuerpo en
+      desequilibrio y colocar pares de imanes de polaridad opuesta para ayudar a que el organismo recupere
+      su equilibrio natural.
+    incluye:
+      - "**Rastreo:** testeo kinesiológico para encontrar los puntos en desequilibrio."
+      - "**Colocación de pares biomagnéticos** para restablecer el equilibrio del pH y la homeostasis, según el enfoque del biomagnetismo."
+      - "**Biomagnetismo emocional:** trabajo sobre cargas emocionales del pasado."
+    precio: Consultar
+  - nombre: Análisis y armonización energética
+    etiqueta: Chequeo completo
+    foto: /img/armonizacion.webp
+    descripcion: >-
+      Una evaluación detallada de todos tus aspectos energéticos, para quienes sienten que su energía bajó
+      y quieren entender qué la está afectando, no solo corregirlo.
+    incluye:
+      - "**Chakras:** análisis y equilibrio de los 7 chakras principales y los menores."
+      - "**Aura:** revisión de sus capas magnética, emocional, mental y espiritual, y sellado de fugas."
+      - "**Cuerpos energéticos:** alineación del cuerpo físico, emocional, mental y espiritual."
+      - "**Pares emocionales** y equilibrio de la glándula pineal."
+    precio: Consultar
+  - nombre: Sanación energética completa
+    etiqueta: La más profunda
+    foto: /img/sanacion.webp
+    descripcion: >-
+      Para quienes sienten bloqueos persistentes en áreas clave de su vida, como el amor, el trabajo, la
+      economía o los estudios. Comienza con biomagnetismo emocional y sigue con una limpieza integral de tu
+      campo energético.
+    incluye:
+      - "**Campo áurico:** limpieza, fortalecimiento y sellado de fugas."
+      - "**Interferencias externas:** detección y liberación de energías que no te pertenecen."
+      - "**Integridad del alma:** recuperación de fragmentos que se hayan perdido."
+      - "**Lazos kármicos:** revisión de votos y vínculos que puedan estar limitándote."
+      - "**Alineación psicoespiritual** a través de la bioenergética."
+    precio: Consultar
+
+pasos_titulo: Cómo es el proceso
+pasos:
+  - titulo: Consulta
+    texto: Me escribís por WhatsApp, me contás cómo estás y elegimos juntos la terapia que más te conviene.
+  - titulo: Sesión
+    texto: Presencial en la sala o a distancia desde tu casa. Solo necesitás un momento tranquilo para vos.
+  - titulo: Devolución
+    texto: Al terminar te cuento qué se trabajó y te acompaño con el seguimiento si lo necesitás.
+
+testimonios_titulo: Lo que cuentan después de la sesión
+testimonios_intro: Mensajes reales que nos llegaron por WhatsApp.
+antes_despues: []
+testimonios:
+  - texto: Me siento súper ahora, extrañamente en paz.
+    detalle: ""
+    destacado: true
+  - texto: >-
+      Antes de la sesión no sabía muy bien qué esperar, pero me sorprendió muchísimo. Desde el primer momento
+      sentí que todo lo que me dijo era muy certero, como si describiera cosas que yo sentía pero no había puesto
+      en palabras. Después noté un cambio real: me sentí más liviano, con una energía distinta, más en calma.
+      Lo volvería a hacer.
+    detalle: Sesión presencial
+    destacado: false
+  - texto: Estoy muy bien después de la última sesión. Relajada, descontracturada y más positiva. Me encanta la comodidad de hacerlo a distancia.
+    detalle: Sesión a distancia
+    destacado: false
+  - texto: Altamente recomendable. Hice de todo y esto fue lo que mejor me hizo.
+    detalle: Biomagnetismo
+    destacado: false
+
+preguntas_titulo: Preguntas frecuentes
+preguntas:
+  - pregunta: ¿Cómo funciona una sesión a distancia?
+    respuesta: Coordinamos día y horario, y en ese momento solo necesitás estar en un lugar tranquilo. La sanación se realiza a través de la bioenergética y la intención, sin necesidad de que estés presente en la sala.
+  - pregunta: ¿Cuál terapia me conviene?
+    respuesta: Si es tu primera vez, lo más simple es escribirme y contarme qué te pasa. Con eso te recomiendo por dónde empezar.
+  - pregunta: ¿Cuánto dura cada sesión?
+    respuesta: Depende de la terapia. Te lo confirmo al reservar.
+  - pregunta: ¿Reemplaza un tratamiento médico?
+    respuesta: No. Son terapias complementarias de bienestar. Si estás en tratamiento, no lo abandones ni cambies tu medicación sin hablar con tu médico.
+
+contacto:
+  titulo: ¿Empezamos?
+  texto: Escribime y te paso los horarios disponibles, presenciales o a distancia.
+  ubicacion: Córdoba capital, con turno previo
+  alcance: Sesiones a distancia a todo el país
+
+pie: Centro Bioenergético Kawsay. Las terapias que ofrecemos son complementarias y no reemplazan el diagnóstico ni el tratamiento médico.

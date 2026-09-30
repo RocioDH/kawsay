@@ -1,0 +1,98 @@
+media:
+  input: img
+  output: /img
+  categories: [image]
+
+content:
+  - name: sitio
+    label: Página de Kawsay
+    type: file
+    path: _data/sitio.yml
+    format: yaml
+    fields:
+      - { name: nombre, label: Nombre del espacio, type: string }
+      - { name: logo, label: Logo (opcional), type: image }
+      - { name: whatsapp, label: "WhatsApp (549 + 351 + número sin 15, todo junto)", type: string }
+      - { name: mensaje_whatsapp, label: Mensaje que se escribe solo al tocar WhatsApp, type: string }
+      - { name: instagram, label: "Usuario de Instagram (sin @)", type: string }
+
+      - name: hero
+        label: Portada
+        type: object
+        fields:
+          - { name: pronunciacion, label: Pronunciación, type: string }
+          - { name: significado, label: Significado, type: string }
+          - { name: bajada, label: Texto principal, type: text }
+          - { name: presencial, label: Texto de "Presencial", type: string }
+          - { name: a_distancia, label: Texto de "A distancia", type: string }
+
+      - name: filosofia
+        label: Filosofía
+        type: object
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - { name: foto, label: Foto, type: image }
+          - { name: texto, label: Primer párrafo, type: text }
+          - { name: frase, label: Frase destacada, type: text }
+          - { name: texto_final, label: Último párrafo, type: text }
+
+      - { name: servicios_titulo, label: Título de servicios, type: string }
+      - { name: servicios_intro, label: Introducción de servicios, type: text }
+      - name: servicios
+        label: Servicios
+        type: object
+        list: true
+        fields:
+          - { name: nombre, label: Nombre, type: string }
+          - { name: etiqueta, label: Etiqueta chica (ej. "Punto de partida"), type: string }
+          - { name: foto, label: Foto, type: image }
+          - { name: descripcion, label: Descripción, type: text }
+          - { name: incluye, label: "Qué incluye (uno por línea; **así** va en negrita)", type: string, list: true }
+          - { name: precio, label: Precio, type: string }
+
+      - { name: pasos_titulo, label: Título del proceso, type: string }
+      - name: pasos
+        label: Pasos del proceso
+        type: object
+        list: true
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - { name: texto, label: Texto, type: text }
+
+      - { name: testimonios_titulo, label: Título de testimonios, type: string }
+      - { name: testimonios_intro, label: Introducción de testimonios, type: string }
+      - name: antes_despues
+        label: Fotos de antes y después
+        type: object
+        list: true
+        fields:
+          - { name: foto, label: Foto, type: image }
+          - { name: leyenda, label: Leyenda (opcional), type: string }
+      - name: testimonios
+        label: Testimonios
+        type: object
+        list: true
+        fields:
+          - { name: texto, label: Testimonio, type: text }
+          - { name: detalle, label: Detalle (ej. "Sesión a distancia"), type: string }
+          - { name: destacado, label: Mostrar grande, type: boolean }
+
+      - { name: preguntas_titulo, label: Título de preguntas, type: string }
+      - name: preguntas
+        label: Preguntas frecuentes
+        type: object
+        list: true
+        fields:
+          - { name: pregunta, label: Pregunta, type: string }
+          - { name: respuesta, label: Respuesta, type: text }
+
+      - name: contacto
+        label: Contacto
+        type: object
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - { name: texto, label: Texto, type: text }
+          - { name: ubicacion, label: Ubicación, type: string }
+          - { name: alcance, label: Alcance a distancia, type: string }
+
+      - { name: pie, label: Texto del pie de página, type: text }

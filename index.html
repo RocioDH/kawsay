@@ -1,0 +1,314 @@
+---
+---
+{%- assign s = site.data.sitio -%}
+{%- capture wa -%}https://wa.me/{{ s.whatsapp }}?text={%- endcapture -%}
+<!DOCTYPE html>
+<!-- Los textos y fotos NO se editan acá: se editan desde el panel de Pages CMS (archivo _data/sitio.yml). -->
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ s.nombre }} · Biomagnetismo y sanación energética</title>
+<meta name="description" content="{{ s.hero.bajada | strip_html | escape }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F2F7;
+    --surface: #FFFFFF;
+    --ink: #2B2233;
+    --soft: #5F5468;
+    --malva: #8C7196;
+    --malva-deep: #5E4768;
+    --jade: #3F7F6E;
+    --line: #E1DAE6;
+    --serif: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --sans: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1D1722; --surface: #272030; --ink: #F1ECF4; --soft: #BDB2C5;
+      --malva: #B89DC2; --malva-deep: #D3BEDB; --jade: #6FB8A3; --line: #3A3143;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1D1722; --surface: #272030; --ink: #F1ECF4; --soft: #BDB2C5;
+    --malva: #B89DC2; --malva-deep: #D3BEDB; --jade: #6FB8A3; --line: #3A3143;
+  }
+  *, *::before, *::after { box-sizing: inherit; margin: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px)); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 1.0625rem; line-height: 1.65; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--jade); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; }
+  h2 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); margin-bottom: 1rem; }
+  h3 { font-size: 1.45rem; }
+  p { max-width: 64ch; }
+  p + p { margin-top: .9rem; }
+  .lead { color: var(--soft); font-size: 1.12rem; }
+
+  /* HEADER */
+  header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; font-weight: 800; font-size: 1.4rem; letter-spacing: -.02em; }
+  .brand img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+  .top nav a { text-decoration: none; color: var(--soft); margin-left: 1.6rem; font-size: .96rem; font-weight: 600; }
+  .top nav a:hover { color: var(--ink); }
+  @media (max-width: 720px) { .top nav { display: none; } }
+
+  .btn { display: inline-block; text-decoration: none; font-weight: 700; padding: .9rem 1.5rem; border-radius: 999px; background: var(--malva-deep); color: #fff; transition: transform .15s ease, background .15s ease; }
+  :root[data-theme="dark"] .btn { color: #1D1722; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn { color: #1D1722; } }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+
+  /* HERO */
+  .hero { padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3rem, 6vw, 5rem); }
+  .word { font-family: var(--serif); font-size: clamp(4.2rem, 16vw, 12rem); font-weight: 800; line-height: .95; letter-spacing: -.045em; color: var(--malva-deep); }
+  .gloss { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; margin: 1.2rem 0 2.2rem; color: var(--soft); font-size: 1.05rem; }
+  .gloss em { font-style: italic; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: end; }
+  .hero-grid .lead { font-size: clamp(1.15rem, 2.2vw, 1.4rem); color: var(--ink); margin-bottom: 1.8rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .modes { list-style: none; padding: 0; border-left: 2px solid var(--malva); padding-left: 1.25rem; color: var(--soft); }
+  .modes li + li { margin-top: .6rem; }
+  .modes strong { color: var(--ink); display: block; }
+  @media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+  /* Guarda escalonada (divisor) */
+  .guarda { height: 18px; color: var(--malva); opacity: .55; }
+  .guarda svg { width: 100%; height: 18px; display: block; }
+
+  section { padding: clamp(3.5rem, 8vw, 5.5rem) 0; }
+  .band { background: var(--surface); }
+
+  /* FOTO con respaldo de color si no hay imagen */
+  .photo { border-radius: 22px; overflow: hidden; background: linear-gradient(150deg, var(--malva), var(--jade)); aspect-ratio: 4 / 3; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* FILOSOFÍA */
+  .philo { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3.5rem; align-items: center; }
+  .philo blockquote { font-family: var(--serif); font-weight: 600; font-style: italic; font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height: 1.35; margin: 1.6rem 0; padding-left: 1.2rem; border-left: 3px solid var(--jade); max-width: 34ch; }
+  @media (max-width: 820px) { .philo { grid-template-columns: 1fr; gap: 2rem; } }
+
+  /* SERVICIOS */
+  .services { display: grid; gap: 1.5rem; margin-top: 2.5rem; }
+  .service { display: grid; grid-template-columns: 300px 1fr; gap: 2rem; background: var(--bg); border: 1px solid var(--line); border-radius: 26px; padding: 1.5rem; }
+  .service .photo { aspect-ratio: 1 / 1; }
+  .service h3 { margin-bottom: .5rem; }
+  .service .tag { display: inline-block; font-size: .85rem; font-weight: 700; color: var(--jade); margin-bottom: .6rem; }
+  .service > div > p { color: var(--soft); }
+  .service details { margin-top: 1.1rem; border-top: 1px solid var(--line); padding-top: .9rem; }
+  .service summary { cursor: pointer; font-weight: 700; color: var(--malva-deep); list-style: none; }
+  .service summary::-webkit-details-marker { display: none; }
+  .service summary::after { content: " +"; }
+  .service details[open] summary::after { content: " –"; }
+  .service ul { margin-top: .8rem; padding-left: 1.1rem; color: var(--soft); }
+  .service li + li { margin-top: .5rem; }
+  .service li strong { color: var(--ink); }
+  .service .foot { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1.2rem; }
+  .service .price { font-weight: 700; }
+  .service .foot a { font-weight: 700; color: var(--jade); }
+  @media (max-width: 760px) { .service { grid-template-columns: 1fr; } .service .photo { aspect-ratio: 16 / 9; } }
+
+  /* PASOS */
+  .steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2rem; margin-top: 2rem; counter-reset: paso; }
+  .steps li { counter-increment: paso; }
+  .steps li::before { content: counter(paso); font-weight: 700; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 1.5px solid var(--malva); color: var(--malva-deep); font-family: var(--serif); font-size: 1.25rem; margin-bottom: .8rem; }
+  .steps h3 { font-size: 1.25rem; margin-bottom: .35rem; }
+  .steps p { color: var(--soft); font-size: 1rem; }
+
+  /* TESTIMONIOS */
+  .quotes { columns: 2 320px; column-gap: 1.5rem; margin-top: 2rem; }
+  .quote { break-inside: avoid; background: var(--bg); border: 1px solid var(--line); border-radius: 20px 20px 20px 4px; padding: 1.4rem 1.5rem; margin-bottom: 1.5rem; }
+  .quote p { font-size: 1.02rem; }
+  .quote footer { margin-top: .8rem; font-size: .88rem; color: var(--soft); }
+  .quote.big p { font-weight: 600; font-style: italic; font-size: 1.35rem; line-height: 1.35; }
+
+  /* ANTES Y DESPUÉS */
+  .ba { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 2rem 0 2.5rem; }
+  .ba figure { margin: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: .8rem; }
+  .ba img { width: 100%; border-radius: 12px; }
+  .ba figcaption { font-size: .88rem; color: var(--soft); padding: .6rem .2rem 0; }
+
+  /* FAQ */
+  .faq details { border-bottom: 1px solid var(--line); padding: 1.1rem 0; max-width: 780px; }
+  .faq summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; font-family: var(--serif); color: var(--malva); font-size: 1.4rem; line-height: 1; }
+  .faq details[open] summary::after { content: "–"; }
+  .faq details p { color: var(--soft); margin-top: .6rem; }
+
+  /* CONTACTO */
+  .contact { background: var(--malva-deep); color: #fff; border-radius: 32px; padding: clamp(2.2rem, 6vw, 4rem); display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; }
+  .contact h2 { color: #fff; }
+  .contact p { color: rgba(255,255,255,.85); }
+  .contact .btn { background: #fff; color: var(--malva-deep); }
+  .contact ul { list-style: none; padding: 0; }
+  .contact li + li { margin-top: .6rem; }
+  .contact a { color: #fff; font-weight: 700; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .contact { background: #3B2D44; } }
+  :root[data-theme="dark"] .contact { background: #3B2D44; }
+  @media (max-width: 760px) { .contact { grid-template-columns: 1fr; } }
+
+  footer.site { padding: 2.5rem 0 6rem; color: var(--soft); font-size: .88rem; }
+  footer.site p { max-width: 80ch; }
+
+  .wa-float { position: fixed; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); z-index: 30; background: #25D366; color: #fff; text-decoration: none; font-weight: 700; padding: .8rem 1.2rem; border-radius: 999px; box-shadow: 0 6px 20px rgba(43,34,51,.25); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">{% if s.logo and s.logo != "" %}<img src="{{ s.logo | remove_first: '/' }}" alt="">{% endif %}{{ s.nombre }}</a>
+    <nav>
+      <a href="#filosofia">Filosofía</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="wrap hero">
+    <h1 class="word">{{ s.nombre }}</h1>
+    <div class="gloss">
+      <span>Se pronuncia <em>{{ s.hero.pronunciacion }}</em></span>
+      <span>{{ s.hero.significado }}</span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <p class="lead">{{ s.hero.bajada }}</p>
+        <div class="actions">
+          <a class="btn" href="{{ wa }}{{ s.mensaje_whatsapp | cgi_escape | replace: '+', '%20' }}" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          <a class="btn ghost" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <ul class="modes">
+        <li><strong>Presencial</strong>{{ s.hero.presencial }}</li>
+        <li><strong>A distancia</strong>{{ s.hero.a_distancia }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap guarda" aria-hidden="true">
+    <svg preserveAspectRatio="none" viewBox="0 0 240 18"><path fill="none" stroke="currentColor" stroke-width="2" d="M0 16 H20 V10 H30 V4 H50 V10 H60 V16 H80 V10 H90 V4 H110 V10 H120 V16 H140 V10 H150 V4 H170 V10 H180 V16 H200 V10 H210 V4 H230 V10 H240"/></svg>
+  </div>
+
+  <section id="filosofia">
+    <div class="wrap philo">
+      <div class="photo">{% if s.filosofia.foto and s.filosofia.foto != "" %}<img src="{{ s.filosofia.foto | remove_first: '/' }}" alt="Sala de atención de {{ s.nombre }}">{% endif %}</div>
+      <div>
+        <h2>{{ s.filosofia.titulo }}</h2>
+        {{ s.filosofia.texto | markdownify }}
+        <blockquote>{{ s.filosofia.frase }}</blockquote>
+        {{ s.filosofia.texto_final | markdownify }}
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="servicios">
+    <div class="wrap">
+      <h2>{{ s.servicios_titulo }}</h2>
+      <p class="lead">{{ s.servicios_intro }}</p>
+      <div class="services">
+        {%- for sv in s.servicios %}
+        <article class="service">
+          <div class="photo">{% if sv.foto and sv.foto != "" %}<img src="{{ sv.foto | remove_first: '/' }}" alt="{{ sv.nombre | escape }}">{% endif %}</div>
+          <div>
+            {% if sv.etiqueta and sv.etiqueta != "" %}<span class="tag">{{ sv.etiqueta }}</span>{% endif %}
+            <h3>{{ sv.nombre }}</h3>
+            {{ sv.descripcion | markdownify }}
+            {%- if sv.incluye and sv.incluye.size > 0 %}
+            <details>
+              <summary>Qué incluye</summary>
+              <ul>
+                {%- for it in sv.incluye %}
+                <li>{{ it | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+                {%- endfor %}
+              </ul>
+            </details>
+            {%- endif %}
+            {%- capture msg %}Hola, quiero un turno para {{ sv.nombre }}{% endcapture %}
+            <div class="foot"><span class="price">{{ sv.precio }}</span><a href="{{ wa }}{{ msg | cgi_escape | replace: '+', '%20' }}" target="_blank" rel="noopener">Pedir turno</a></div>
+          </div>
+        </article>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>{{ s.pasos_titulo }}</h2>
+      <ol class="steps">
+        {%- for p in s.pasos %}
+        <li><h3>{{ p.titulo }}</h3><p>{{ p.texto }}</p></li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="testimonios">
+    <div class="wrap">
+      <h2>{{ s.testimonios_titulo }}</h2>
+      <p class="lead">{{ s.testimonios_intro }}</p>
+      {%- if s.antes_despues and s.antes_despues.size > 0 %}
+      <div class="ba">
+        {%- for f in s.antes_despues %}{% if f.foto and f.foto != "" %}
+        <figure><img src="{{ f.foto | remove_first: '/' }}" alt="Antes y después de una sesión">{% if f.leyenda and f.leyenda != "" %}<figcaption>{{ f.leyenda }}</figcaption>{% endif %}</figure>
+        {%- endif %}{% endfor %}
+      </div>
+      {%- endif %}
+      <div class="quotes">
+        {%- for t in s.testimonios %}
+        <blockquote class="quote{% if t.destacado %} big{% endif %}"><p>{{ t.texto }}</p>{% if t.detalle and t.detalle != "" %}<footer>{{ t.detalle }}</footer>{% endif %}</blockquote>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="preguntas">
+    <div class="wrap">
+      <h2>{{ s.preguntas_titulo }}</h2>
+      {%- for q in s.preguntas %}
+      <details><summary>{{ q.pregunta }}</summary><p>{{ q.respuesta }}</p></details>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>{{ s.contacto.titulo }}</h2>
+          <p>{{ s.contacto.texto }}</p>
+          <p style="margin-top:1.5rem"><a class="btn" href="{{ wa }}{{ s.mensaje_whatsapp | cgi_escape | replace: '+', '%20' }}" target="_blank" rel="noopener">Escribir por WhatsApp</a></p>
+        </div>
+        <ul>
+          <li>{{ s.contacto.ubicacion }}</li>
+          <li>{{ s.contacto.alcance }}</li>
+          {% if s.instagram and s.instagram != "" %}<li><a href="https://instagram.com/{{ s.instagram }}" target="_blank" rel="noopener">Instagram</a></li>{% endif %}
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap">
+  <footer class="site"><p>{{ s.pie }}</p></footer>
+</div>
+
+<a class="wa-float" href="{{ wa }}{{ s.mensaje_whatsapp | cgi_escape | replace: '+', '%20' }}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">WhatsApp</a>
+</body>
+</html>
